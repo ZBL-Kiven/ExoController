@@ -3,6 +3,7 @@ package com.zj.videotest.feed
 import android.animation.Animator
 import android.animation.ObjectAnimator
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.os.Handler
 import android.os.Looper
 import android.view.LayoutInflater
@@ -225,6 +226,7 @@ class FeedContentAdapter<T : FeedDataIn> : ListenerAnimAdapter<T>(R.layout.r_mai
     }
 
     private fun loadAvatar(url: String, iv: ImageView) {
+        if ((iv.context as? Activity)?.isFinishing == true || (iv.context as? Activity)?.isDestroyed == true) return
         val width = if (iv.width <= 0) 1 else iv.width
         val height = if (iv.height <= 0) 1 else iv.height
         Glide.with(iv).load(url).override(width, height).circleCrop().into(iv)

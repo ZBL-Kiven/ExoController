@@ -96,18 +96,18 @@ class RFeedFragment : BaseLinkageFragment() {
         })
     }
 
-    override fun onPaused() {
-        super.onPaused()
-        adapter?.pause()
-    }
-
-    override fun onResumed() {
-        super.onResumed()
-        adapter?.resume()
-    }
-
-    override fun onDestroyed() {
-        super.onDestroyed()
-        adapter?.destroy()
-    }
+//    override fun onPaused() {
+//        super.onPaused()
+//        adapter?.pause()
+//    }
+//
+//    override fun onResumed() {
+//        super.onResumed()
+//        adapter?.resume()
+//    }
+//
+//    override fun onDestroyed() {
+//        super.onDestroyed()
+//        adapter?.destroy()
+//    }
 }

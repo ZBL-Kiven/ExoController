@@ -35,11 +35,11 @@ class MainActivity : AppCompatActivity() {
         initFrg()
         ZPlayerLogs.setVideoEventListener(object : VideoEventListener() {
             override fun onError(e: Exception) {
-                //                Log.e("------ ", " ================ error !!     ${e.message}")
+                Log.e("------ ", " ================ error !!     ${e.message}")
             }
 
             override fun onLog(s: String, curPath: String, accessKey: String, modeName: String, params: Map<String, Any>?) {
-//                Log.e("------ ", s)
+                Log.e("------ ", s)
             }
         })
     }
@@ -74,5 +74,20 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    override fun finish() {
+        Log.e("------ ", "main activity is finishing")
+        super.finish()
+    }
+
+    override fun onTrimMemory(level: Int) {
+        Log.e("------ ", "main activity is onTrimMemory  $level")
+        super.onTrimMemory(level)
+    }
+
+    override fun onDestroy() {
+        Log.e("------ ", "main activity is destroyed")
+        super.onDestroy()
     }
 }
